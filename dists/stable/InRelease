@@ -4,7 +4,7 @@ Hash: SHA512
 Architectures: amd64 arm64
 Codename: stable
 Components: main
-Date: Thu, 22 Oct 2026 06:36:11 +0000
+Date: Thu, 22 Oct 2026 06:37:59 +0000
 Description: ttt Debian and Ubuntu packages
 Label: ttt
 Origin: ttt
@@ -31,8 +31,8 @@ SHA512:
  c58238b584eb4b76e92ba311f91b73c999b5e4aabf546a57ea30b4bd7fec44b6bc94ed7a802f4904086547ffe268d4dd6cabfdfce4e0497300ae48cc5dad4135              519 main/binary-arm64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQRjZswIjMLKM90alPtEWYE6XLgwYQUCatmu2wAKCRBEWYE6XLgw
-Yb3qAQDP7cWS6NztPmYwNOvgzYnIkK+V43b6v69Yp03Sw1YXxAEA15KlGT6pyNnW
-G92GYoO4qFwTz+NPB4RXm3ar6Df5PAs=
-=6BVp
+iHUEARYKAB0WIQRjZswIjMLKM90alPtEWYE6XLgwYQUCatmvRwAKCRBEWYE6XLgw
+YTpnAP9MF9eYp4Cfl1m+GwdrlwrIaC49rFMpYnEXkXTtIZId0gEAzlFMiF6h2kHB
+9iDZ+9rd1CLKOEOMqNcVo9GqxZggPQA=
+=kT3O
 -----END PGP SIGNATURE-----
