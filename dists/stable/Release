@@ -1,0 +1,28 @@
+Architectures: amd64 arm64
+Codename: stable
+Components: main
+Date: Thu, 22 Oct 2026 06:36:11 +0000
+Description: ttt Debian and Ubuntu packages
+Label: ttt
+Origin: ttt
+Suite: stable
+MD5Sum:
+ 992c9dbe7e9cc6d4295c352a2be4df99              721 main/binary-amd64/Packages
+ 76f76b0eacf07c071b124bbe29e387fc              516 main/binary-amd64/Packages.gz
+ fd517fdae4af23e542c694c1b6a8a90a              721 main/binary-arm64/Packages
+ d477213d9c3c12b434b0652c824f0925              519 main/binary-arm64/Packages.gz
+SHA1:
+ d3e0a8f67c191e8981cb6f1140b11fa04141a4ec              721 main/binary-amd64/Packages
+ 691183aa85b3ff3238c83ff6481b95ced4cd4a44              516 main/binary-amd64/Packages.gz
+ 334591b12524b873abbb9f1289416972d95597b2              721 main/binary-arm64/Packages
+ 604159877fdc5c747a543d77c15340b7b52589c6              519 main/binary-arm64/Packages.gz
+SHA256:
+ 35c988f8aea6e5ba71235a7931d23cce964c59b70480388a303d7c0d2b4f393a              721 main/binary-amd64/Packages
+ ae2fa253e44f835a34f34ffd08ec609934fa9fedff43185d9c38e21517e91629              516 main/binary-amd64/Packages.gz
+ 0af271c3fc68d40a987f3baa9c4651001fbc60abf17bdd5bf25402cb415b2e0d              721 main/binary-arm64/Packages
+ f0af5d0c9d8036422bcfa18c893ad9daa26cfc56c8c70e8970ba49a3de30539b              519 main/binary-arm64/Packages.gz
+SHA512:
+ 17d5dc118a84700c6ba1018eff5864dce644d56bf89936e352c6f894731ecb4542f69558cf087e4cc2b266e6194d89c767bf9ce8496b9ed0b0a14a26614c013b              721 main/binary-amd64/Packages
+ 8b95128efcb9a8cf41fc4cb3c5379ede14186057fe9c2b417edbc435a54f55206457e1545654c0cf5d0085ebfa78f93199a32646a1e4e59216b1996df65a497b              516 main/binary-amd64/Packages.gz
+ 252a8254ffdda98d586c0d915275b456d2b4e73d524578370c5a2ce0607dc93fe24a41a6e88538e7b4bbbddb70a9dc5f441e6af02c3e7e6d8d7efa8976b6968a              721 main/binary-arm64/Packages
+ c58238b584eb4b76e92ba311f91b73c999b5e4aabf546a57ea30b4bd7fec44b6bc94ed7a802f4904086547ffe268d4dd6cabfdfce4e0497300ae48cc5dad4135              519 main/binary-arm64/Packages.gz

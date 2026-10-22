@@ -1,0 +1,19 @@
+Package: ttt
+Architecture: amd64
+Version: 1.8.0-1
+Priority: optional
+Section: editors
+Maintainer: Eugene Yakhnenko <eugenioenko@gmail.com>
+Installed-Size: 15604
+Recommends: git, ripgrep
+Filename: pool/main/t/ttt/ttt_1.8.0-1_amd64.deb
+Size: 5374304
+MD5sum: ffa6660c57d9e4494da8a99ecaaaed6b
+SHA1: c59101e2fbd9347e6c37edf74d09853c34edd703
+SHA256: 6144bf924e0bf25300ca293d2f8806c971f04471798433489b611bf520866b53
+SHA512: 9ba2373d67df6b0a25fad5274d3cc9d7c739c4f38501a423d7755ad38ce65fcdc84e55f31dfa84887fd606121bed44cb36701407e1e3d7801f8234be204b76bd
+Homepage: https://tttedit.dev
+Description: Terminal text editor
+ A terminal text editor with syntax highlighting, Git integration,
+ language server support, and Lua plugins.
+
