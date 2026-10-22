@@ -1,0 +1,129 @@
+name: Update APT repository
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [new-release]
+  schedule:
+    - cron: '23 * * * *'
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: apt-${{ github.event.pull_request.number || 'publish' }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y apt-utils shellcheck
+      - name: Check scripts and repository contracts
+        run: |
+          shellcheck scripts/*.sh tests/*.sh
+          tests/build-repository.sh
+
+  build:
+    if: github.event_name != 'pull_request'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      publish: ${{ steps.release.outputs.publish }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Restore published packages
+        run: |
+          gh auth setup-git
+          if git ls-remote --heads origin gh-pages | grep -q .; then
+            git fetch --depth=1 origin gh-pages
+            git worktree add --detach _site FETCH_HEAD
+          else
+            git init -b gh-pages _site
+            git -C _site remote add origin "$(git remote get-url origin)"
+          fi
+      - name: Get latest stable release
+        id: release
+        run: |
+          release=$(gh api repos/eugenioenko/ttt/releases/latest)
+          tag=$(jq -r .tag_name <<< "$release")
+          [[ "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "epoch=$(date -d "$(jq -r .published_at <<< "$release")" +%s)" >> "$GITHUB_OUTPUT"
+          if [[ -f _site/version ]] && [[ "$(cat _site/version)" = "$tag" ]] && [[ "$GITHUB_EVENT_NAME" != workflow_dispatch ]] && [[ "$GITHUB_EVENT_NAME" != push ]]; then
+            echo 'publish=false' >> "$GITHUB_OUTPUT"
+            echo "Already published $tag"
+          else
+            echo 'publish=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install packaging tools
+        if: steps.release.outputs.publish == 'true'
+        run: sudo apt-get update && sudo apt-get install -y apt-utils gnupg
+      - name: Download upstream release
+        if: steps.release.outputs.publish == 'true'
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          mkdir downloads
+          gh release download "$RELEASE_TAG" --repo eugenioenko/ttt --dir downloads \
+            --pattern ttt-linux-amd64 --pattern ttt-linux-arm64 --pattern checksums.txt
+          gh api "repos/eugenioenko/ttt/contents/LICENSE?ref=$RELEASE_TAG" \
+            --header 'Accept: application/vnd.github.raw+json' > downloads/LICENSE
+      - name: Build and sign repository
+        if: steps.release.outputs.publish == 'true'
+        env:
+          APT_SIGNING_PRIVATE_KEY: ${{ secrets.APT_SIGNING_PRIVATE_KEY }}
+          APT_SIGNING_KEY: ${{ vars.APT_SIGNING_KEY }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          SOURCE_DATE_EPOCH: ${{ steps.release.outputs.epoch }}
+        run: |
+          export GNUPGHOME
+          GNUPGHOME=$(mktemp -d)
+          trap 'gpgconf --kill gpg-agent; rm -rf "$GNUPGHOME"' EXIT
+          printf '%s' "$APT_SIGNING_PRIVATE_KEY" | gpg --batch --import
+          scripts/build-repository.sh downloads _site "$RELEASE_TAG"
+      - name: Test APT install, editor startup, and removal
+        if: steps.release.outputs.publish == 'true'
+        run: |
+          for image in debian:bookworm-slim debian:trixie-slim ubuntu:22.04 ubuntu:24.04 ubuntu:26.04; do
+            tests/apt-install.sh "$image" _site
+          done
+      - name: Save package archive
+        if: steps.release.outputs.publish == 'true'
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          git -C _site config user.name 'github-actions[bot]'
+          git -C _site config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C _site add .
+          git -C _site commit -m "publish ttt $RELEASE_TAG"
+          git -C _site push origin HEAD:gh-pages
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        if: steps.release.outputs.publish == 'true'
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        id: deployment
