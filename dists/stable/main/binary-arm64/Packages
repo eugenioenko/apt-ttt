@@ -17,3 +17,22 @@ Description: Terminal text editor
  A terminal text editor with syntax highlighting, Git integration,
  language server support, and Lua plugins.
 
+Package: ttt
+Architecture: arm64
+Version: 1.9.0-1
+Priority: optional
+Section: editors
+Maintainer: Eugene Yakhnenko <eugenioenko@gmail.com>
+Installed-Size: 15004
+Recommends: git, ripgrep
+Filename: pool/main/t/ttt/ttt_1.9.0-1_arm64.deb
+Size: 4795012
+MD5sum: 524277f38d07a98138c043438853358c
+SHA1: 30a08204ce176a2e65eb4f074ecfaeca7b29c9a6
+SHA256: cdf785e54a50bde34d2ca164d630abd046aaca3f378797701b82caac3c54d6cc
+SHA512: 8a14fe15c4107a3df0d56781928cb50ba0dadb62e8500a013ef9a567560cb769792e7dc0e935a761cbd00708cbb15ada0a04df55ae6e2645d661f1cce525be68
+Homepage: https://tttedit.dev
+Description: Terminal text editor
+ A terminal text editor with syntax highlighting, Git integration,
+ language server support, and Lua plugins.
+

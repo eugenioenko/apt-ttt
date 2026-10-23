@@ -17,3 +17,22 @@ Description: Terminal text editor
  A terminal text editor with syntax highlighting, Git integration,
  language server support, and Lua plugins.
 
+Package: ttt
+Architecture: amd64
+Version: 1.9.0-1
+Priority: optional
+Section: editors
+Maintainer: Eugene Yakhnenko <eugenioenko@gmail.com>
+Installed-Size: 16088
+Recommends: git, ripgrep
+Filename: pool/main/t/ttt/ttt_1.9.0-1_amd64.deb
+Size: 5527096
+MD5sum: 89439277eb783d5b9ac00cf1e590797d
+SHA1: 04963f46c751ac7942d907024adebf88eef5e18c
+SHA256: 3acd03064cc566080782841f7164c255864404dffbe683126ae05cdb2d13749b
+SHA512: c77559d3188566cb0ae4bcb6ff5826dda3615bc0d1f4dc0d8f08aa90fa1c164d11ccd24e8d61ab12a8a3c7137e0f076c301cef4602fc9b065a592c0f4145081d
+Homepage: https://tttedit.dev
+Description: Terminal text editor
+ A terminal text editor with syntax highlighting, Git integration,
+ language server support, and Lua plugins.
+
