@@ -19,6 +19,25 @@ Description: Terminal text editor
 
 Package: ttt
 Architecture: arm64
+Version: 1.11.0-1
+Priority: optional
+Section: editors
+Maintainer: Eugene Yakhnenko <eugenioenko@gmail.com>
+Installed-Size: 15708
+Recommends: git, ripgrep
+Filename: pool/main/t/ttt/ttt_1.11.0-1_arm64.deb
+Size: 4986952
+MD5sum: 64cb85778cd5a4347fb9dd26cb10826e
+SHA1: 47bcb9fad67ea2bc5139f994c7f64841faae60bd
+SHA256: 22acd979b0271a25049adbedb4fbb0deaadccc1cbb8aba644c08e80e01a4e0d1
+SHA512: d18fa2535bb514f91f26214a043aff4a9a22a7c4ffdb3c2e7b2f0df4e9e2d076160be386dabe7467df754b6f6dae78a6364cf54ccc3c6be7480ffba2ccd3f5ae
+Homepage: https://tttedit.dev
+Description: Terminal text editor
+ A terminal text editor with syntax highlighting, Git integration,
+ language server support, and Lua plugins.
+
+Package: ttt
+Architecture: arm64
 Version: 1.8.0-1
 Priority: optional
 Section: editors
