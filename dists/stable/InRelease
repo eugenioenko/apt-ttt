@@ -4,35 +4,35 @@ Hash: SHA512
 Architectures: amd64 arm64
 Codename: stable
 Components: main
-Date: Fri, 20 Nov 2026 13:16:59 +0000
+Date: Fri, 27 Nov 2026 05:11:57 +0000
 Description: ttt Debian and Ubuntu packages
 Label: ttt
 Origin: ttt
 Suite: stable
 MD5Sum:
- ef734d3ecaf27406d372d120781d4ac0             3615 main/binary-amd64/Packages
- 3c1b407b96736d55dbe8f9f71f6271e2             1277 main/binary-amd64/Packages.gz
- 731fcb39d596715c205a7cbc6291d7ce             3615 main/binary-arm64/Packages
- 6da7da92b5f9ad3bf1da4b3949864b0f             1284 main/binary-arm64/Packages.gz
+ ba0f9f4c931eb0b1d7ff156572f45a5c             3615 main/binary-amd64/Packages
+ 1f377f525f9a944176c38b08bd6e73cf             1280 main/binary-amd64/Packages.gz
+ 7ca0ed0f2d00f97012d65631e900f562             3615 main/binary-arm64/Packages
+ 178fb730e305963240d0af71f68b5aa2             1285 main/binary-arm64/Packages.gz
 SHA1:
- 143f8b01c74ea5f42fce14d259741ae9f0db6fc0             3615 main/binary-amd64/Packages
- a86d666b92d5d53e4a9c9921cb8fff5d735d6562             1277 main/binary-amd64/Packages.gz
- 045983e569a36592998972cfc529307eaa7141ec             3615 main/binary-arm64/Packages
- acfc494df1fdf4b7300e0f632c9c35040964e939             1284 main/binary-arm64/Packages.gz
+ 7ad3f1c104ffb811316247db8721a608fa33e972             3615 main/binary-amd64/Packages
+ 2f16e95e0799ea474193134115c505eb1258010c             1280 main/binary-amd64/Packages.gz
+ 6c885c83a4e8db8dbc3b0dfc30b438b24d15f96a             3615 main/binary-arm64/Packages
+ 1dc0491b1a6cbf396bad5ec06ab8a413522b60aa             1285 main/binary-arm64/Packages.gz
 SHA256:
- 47227e891fc93dd93276c7fda9516789718683ef45ff87cac58a4106d2eff83c             3615 main/binary-amd64/Packages
- c10dff3e56fe412610f4c7ead70b33c95bd32e8991a744108beecee813bc7202             1277 main/binary-amd64/Packages.gz
- aa74af36c17b8f3a139f9de7c1698294360fc1945915403d1096d8b5a6bccfa4             3615 main/binary-arm64/Packages
- 20cea22c705336456aea60de25b0af67f638155480041b5b2010e87b44a39b84             1284 main/binary-arm64/Packages.gz
+ 7e7d406f4cfcabf5fb70d853ad27a21e8e91d2ce0cab1add691de9fa2fe88190             3615 main/binary-amd64/Packages
+ 0b637ab7bd844dd5844b695c7dbe643c55de1bf7d5cf62c5773f0c86b56a81bb             1280 main/binary-amd64/Packages.gz
+ c8856640ec9e282ec1bff18b6a081c1c28c2563179f8b319dcf3429b899ea297             3615 main/binary-arm64/Packages
+ 725acc0f1d428c5881bd8da49d9d63477b3ea5c911275c649b52098ad0ba7004             1285 main/binary-arm64/Packages.gz
 SHA512:
- e35253c650da3cc14b727315e863beaa1127170a6f4ed17af31d4cf1b67782310d025aa8ed03d936d4220e7612145f26e1b68d329472c757de299d1ed22d19d5             3615 main/binary-amd64/Packages
- 33dd27ad33467b1478630081532a0d896fb793c63740e0da758db049ee5fc474c8eaa0a400241fe21d86e93d6240603c941e7bdeabb79ced698e0dde7a3eaece             1277 main/binary-amd64/Packages.gz
- 839bb0d88b5194b1d662df8348eb0174cbcf6869938004223f30cb986684c2dbe40af2ddd54fbf81a07fa713a1fc3b70fdb20fb8e75b43ae6bdd6d49574bfb0f             3615 main/binary-arm64/Packages
- 6f5a1fb764265d00122c8ddf36190a6932001b1cd404da065cfd6b2fb65a237088d2b00d318a83f68712986c4d39e393896e4ff94000a78f0a2bb06f79140fbd             1284 main/binary-arm64/Packages.gz
+ 82b9c56843489f9a73c9cf5d132061cc20cdce889e3fb6a2fdafbf904bea5016e7c66b409f6dfa850eecf854a043ff15ab32689d3b0ce788bedecfc537dadd1c             3615 main/binary-amd64/Packages
+ 4448e47ec111647e570e3582593f793ef15c59771b2d30d513f751bcb8d49e4219a393ae78b556aa9e6596afc1f0162b7c24395ead28caab5cd2a337e22806a2             1280 main/binary-amd64/Packages.gz
+ ed49d6a4755cab51ec4f88219a84b36a25416203a812cd8d4b07ec2a5db2c8851c96dbfc9b2107d6d2e61215d8cb5b98d6fce7b5a34eb21f42bc9895bff35fd9             3615 main/binary-arm64/Packages
+ b7e3c54da41a2643f90f863e81292a95182666097fa6975165201918b21cb99d333ab34de03f9989614bac8a992f993130a65ca99c1c8324e428de19ca1ec56d             1285 main/binary-arm64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQRjZswIjMLKM90alPtEWYE6XLgwYQUCawBISwAKCRBEWYE6XLgw
-YSMTAQDacS1BOoVqtzFWnyDqxaqrl9v0wYmBMqi5Oco94wSJLwEApg7A+U4gcZWc
-mHM+ym1lb5giQIoBSdlh20vf4cRkcgU=
-=jCDy
+iHUEARYKAB0WIQRjZswIjMLKM90alPtEWYE6XLgwYQUCawkRHQAKCRBEWYE6XLgw
+YWaMAQCupx6FnxBs/AnWXoZXuPzgtI+HLuHBKi0TjYWuvfNWKQEAvueruar2kCYI
+QhFnLtBl6jfcCkzjsLxzU+c79wAyPAs=
+=KH1N
 -----END PGP SIGNATURE-----
